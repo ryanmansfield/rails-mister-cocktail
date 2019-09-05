@@ -1,0 +1,5 @@
+<h1>Here is a list of cocktails</h1>
+
+<p><%= link_to "Add Cocktail", new_cocktail_path, class: "btn btn-primary" %></p>
+
+<%= render 'cocktail_list', cocktails: @cocktails %>
