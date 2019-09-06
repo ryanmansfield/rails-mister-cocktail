@@ -1,7 +1,14 @@
-<h1><%= @cocktail.name %></h1>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1525268323446-0505b6fe7778?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1952&q=80);">
+  <div class="container">
+    <h1><%= @cocktail.name %></h1>
+  </div>
+</div>
+
+
+
 
 <div>
-  <%=  @doses.each do |dose|%>
+  <%  @doses.each do |dose|%>
     <p> <%= dose.description %> - <%= dose.ingredient['name'] %> </p>
         <%= link_to "Remove", dose, method: :delete %>
   <% end %>
