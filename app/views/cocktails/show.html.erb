@@ -9,13 +9,14 @@
 
 <div>
   <%  @doses.each do |dose|%>
-    <p> <%= dose.description %> - <%= dose.ingredient['name'] %> </p>
-        <%= link_to "Remove", dose, method: :delete %>
+    <p> <%= dose.description %> - <%= dose.ingredient['name'] %> <%= link_to "Remove", dose, method: :delete %></p>
   <% end %>
 </div>
 
-
+<div class="container-btn">
 <%= link_to "Add an Ingredient", new_cocktail_dose_path(@cocktail), class: 'btn btn-primary' %>
 
 <%= link_to "Back to all cocktails", cocktails_path, class: 'btn btn-primary' %>
+
+</div>
 
