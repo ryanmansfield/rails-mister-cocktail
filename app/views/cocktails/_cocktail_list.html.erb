@@ -1,7 +1,12 @@
 <div class="container">
   <div class="cards">
     <% @cocktails.each do |cocktail| %>
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1514361892635-6b07e31e75f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80)">
+      <% if cocktail.image? %>
+        <% background_url = cl_image_path cocktail.image, width: 400, height: 500, crop: :fill %>
+      <% else %>
+        <% background_url =  "https://images.unsplash.com/photo-1514361892635-6b07e31e75f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80" %>
+      <% end %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= background_url %>')">
 
 
           <p><%= link_to cocktail.name, cocktail_path(cocktail) %></p>
@@ -9,6 +14,20 @@
     <% end %>
    </div>
 </div>
+
+
+
+<!-- <div class="container">
+  <div class="cards">
+    <% @cocktails.each do |cocktail| %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1514361892635-6b07e31e75f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80)">
+
+
+          <p><%= link_to cocktail.name, cocktail_path(cocktail) %></p>
+        </div>
+    <% end %>
+   </div>
+</div> -->
 
 
 
