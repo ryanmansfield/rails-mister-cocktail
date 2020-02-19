@@ -1,0 +1,10 @@
+# # config/cloudinary.yml
+# development:
+#   cloud_name: "dy5km934g"
+#   api_key: "189514628485777"
+#   api_secret: "DycOKoCQpSUI2t1bFOqVSboOMIQ"
+
+# production:
+#   cloud_name: "dy5km934g"
+#   api_key: "189514628485777"
+#   api_secret: "DycOKoCQpSUI2t1bFOqVSboOMIQ"
