@@ -5,15 +5,14 @@
 </div>
 
 
-<div class="container">
-  <%= form_tag cocktails_path, method: :get do %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "Find a Cocktail"
-    %>
-    <%= submit_tag "Search", class: "btn btn-primary" %>
-  <% end %>
+
+
+  <%= simple_form_for :query, url: cocktails_path, method: "GET", html: { class: 'form-inline' } do |f| %>
+  <%= f.input :query, input_html: {value: ""} %>
+  <%= f.submit "Search", class: "btn btn-primary" %>
+<% end %>
+
+
 
 </div>
 <p><%= link_to "Add Cocktail", new_cocktail_path, class: "btn btn-primary" %></p>
