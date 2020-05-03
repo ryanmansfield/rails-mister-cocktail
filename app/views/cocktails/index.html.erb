@@ -8,7 +8,8 @@
 
 
   <%= simple_form_for :query, url: cocktails_path, method: "GET", html: { class: 'form-inline' } do |f| %>
-  <%= f.input :query, input_html: {value: ""} %>
+  <%= f.input :search, input_html: {value: ""} %>
+  <%=f.input :filter,  collection: [ "gin", "last", "rum"],   as: :check_boxes %>
   <%= f.submit "Search", class: "btn btn-primary" %>
 <% end %>
 

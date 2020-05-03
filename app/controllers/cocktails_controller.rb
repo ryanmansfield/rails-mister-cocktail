@@ -4,8 +4,8 @@ class CocktailsController < ApplicationController
   def index
     # @cocktails = Cocktail.all
     if params[:query].present?
-      debugger
-      @cocktails = Cocktail.search_by_name(params[:query][:query])
+      @search = "#{params[:query][:search]} #{params[:query][:filter]}"
+      @cocktails = Cocktail.search_by_name(@search)
     else
       @cocktails = Cocktail.all
     end
